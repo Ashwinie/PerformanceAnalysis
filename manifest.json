@@ -4,10 +4,10 @@
     "name": "Page Performance Testing",
     "description": "This extension generates an analysis report on the performance of the rendered webpage ",
     "version": "1.0",
-  
+    //"devtools_page": "devtools.html", 
     "browser_action": {
       "default_icon": "icon.png",
-      "default_popup": "index.html"
+     "default_popup": "index.html"
     },
    
     "background": {
@@ -18,11 +18,17 @@
         {
           "matches": ["<all_urls>"],
           //"css": ["mystyles.css"],
-          "js": ["js/performanceAnalysis.js"],
+          "js": ["js/jquery-3.2.1.min.js","js/utils.js","js/performanceAnalysis.js"],
           "run_at": "document_end" 
         }
     ],  
     "permissions": [
-      "activeTab"
+      "tabs",
+      "debugger",
+      "webRequest",
+      "webNavigation",
+      "management",
+      "http://*/*",
+      "https://*/*"
     ]
   }
